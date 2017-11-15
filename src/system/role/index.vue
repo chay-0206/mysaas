@@ -1,14 +1,28 @@
 <template>
     <div>
         <div class="my-title" style="margin-bottom:20px;">角色列表</div>
-        <el-table :data="tableData3" border style="width: 100%;height:100%;">
-            <el-table-column prop="date" label="日期" width="180">
-            </el-table-column>
-            <el-table-column prop="name" label="姓名" width="180">
-            </el-table-column>
-            <el-table-column prop="address" label="地址">
-            </el-table-column>
-        </el-table>
+        <table>
+            <thead>
+                <tr>
+                    <th class="table-width-1">角色名称</th>
+                    <th class="table-width-2">关联用户数</th>
+                    <th class="table-width-3">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in data">
+                    <td>{{item.roleName}}</td>
+                    <td>{{item.brokerNum}}</td>
+                    <td>
+                        <el-button icon="el-icon-share" size="mini" v-if="item.isDefault===0">查看</el-button>
+                        <div v-else>
+                            <el-button icon="el-icon-edit" size="mini">编辑</el-button>
+                            <el-button icon="el-icon-warning" size="mini">删除</el-button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
@@ -17,49 +31,29 @@
     	name: 'system-role',
     	data() {
     		return {
-    			tableData3: [
-    				{
-    					date: '2016-05-03',
-    					name: '王小虎',
-    					address: '上海市普陀区金沙江路 1518 弄'
-    				},
-    				{
-    					date: '2016-05-02',
-    					name: '王小虎',
-    					address: '上海市普陀区金沙江路 1518 弄'
-    				},
-    				{
-    					date: '2016-05-04',
-    					name: '王小虎',
-    					address: '上海市普陀区金沙江路 1518 弄'
-    				},
-    				{
-    					date: '2016-05-01',
-    					name: '王小虎',
-    					address: '上海市普陀区金沙江路 1518 弄'
-    				},
-    				{
-    					date: '2016-05-08',
-    					name: '王小虎',
-    					address: '上海市普陀区金沙江路 1518 弄'
-    				},
-    				{
-    					date: '2016-05-06',
-    					name: '王小虎',
-    					address: '上海市普陀区金沙江路 1518 弄'
-    				},
-    				{
-    					date: '2016-05-07',
-    					name: '王小虎',
-    					address: '上海市普陀区金沙江路 1518 弄'
-    				}
-    			]
+    			data: []
     		};
     	},
-    	methods: {}
+    	methods: {},
+    	created() {
+    		this.$axios.get(`/v3/privilege/role/reqrolelist/`).then(res => {
+    			this.data = res.data.result;
+    		});
+    	}
     };
 </script>
 
 <style lang="less">
-
+    table {
+    	width: inherit;
+    }
+    .table-width-1 {
+    	width: 270px;
+    }
+    .table-width-2 {
+    	width: 140px;
+    }
+    .table-width-3 {
+    	width: 380px;
+    }
 </style>

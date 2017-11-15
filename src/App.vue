@@ -9,7 +9,7 @@
                     <i class="el-icon-tickets"></i>
                 </el-radio-button>
             </el-radio-group>
-            <el-menu style="height:100%;" class="el-menu-vertical-demo" background-color="#454e53" text-color="#fff" active-text-color="#1ab9a6" @open=" handleOpen " @close="handleClose " :collapse="isCollapse ">
+            <el-menu class="el-menu-vertical-demo" background-color="#454e53" text-color="#fff" active-text-color="#1ab9a6" :router="true" :default-active="activeIndex" :collapse="isCollapse" style="height:100%;">
                 <div class="hfq-logo">
                 </div>
                 <el-submenu index="1">
@@ -45,7 +45,7 @@
                         <span slot="title">系统</span>
                     </template>
                     <el-menu-item index="4-1">账号管理</el-menu-item>
-                    <el-menu-item index="4-2">角色管理</el-menu-item>
+                    <el-menu-item index="/system/role">角色管理</el-menu-item>
                     <el-menu-item index="4-3">系统配置</el-menu-item>
                     <el-menu-item index="4-4">操作日志</el-menu-item>
                 </el-submenu>
@@ -61,6 +61,7 @@
 </template>
 
 <script>
+    import mock from 'assets/js/mock.js';
     import 'element-ui/lib/theme-chalk/index.css';
     import 'element-ui/lib/index.js';
     export default {
@@ -68,18 +69,18 @@
     	data() {
     		return {
     			show_btn: true,
-    			isCollapse: true
+    			isCollapse: true,
+    			activeIndex: ''
     		};
     	},
     	methods: {
-    		handleOpen(key, keyPath) {
-    			console.log(key, keyPath);
-    		},
-    		handleClose(key, keyPath) {
-    			console.log(key, keyPath);
-    		},
     		change(value) {
     			this.show_btn = !this.show_btn;
+    		}
+    	},
+    	created() {
+    		if (!this.$route.meta.alone) {
+    			this.activeIndex = this.$route.path;
     		}
     	}
     };
@@ -135,6 +136,7 @@
     	margin-top: 10px;
     	background: #fff;
     	padding: 20px;
+    	overflow: auto;
     }
 </style>
 

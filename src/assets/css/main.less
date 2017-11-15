@@ -36,6 +36,37 @@ body {
 	font-size: 18px;
 	font-weight: 700;
 }
+
+// table样式
+table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-color: grey;
+	font-size: 14px;
+	color: #5a5e66;
+	background: #fff;
+}
+table thead th {
+	white-space: nowrap;
+	overflow: hidden;
+	user-select: none;
+	text-align: left;
+	font-weight: bold;
+	color: #878d99;
+}
+table th,
+table td {
+	padding: 12px 10px;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	position: relative;
+	border: 1px solid #e6ebf5;
+}
+table tbody tr:hover {
+	background-color: #f5f7fa;
+}
+
 /**************** 工具类样式 *****************/
 /* 水平flex布局 */
 .hfq-cell {
