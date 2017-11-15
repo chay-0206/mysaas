@@ -1,21 +1,65 @@
 <template>
-    <div>测试</div>
+    <div>
+        <div class="my-title" style="margin-bottom:20px;">角色列表</div>
+        <el-table :data="tableData3" border style="width: 100%;height:100%;">
+            <el-table-column prop="date" label="日期" width="180">
+            </el-table-column>
+            <el-table-column prop="name" label="姓名" width="180">
+            </el-table-column>
+            <el-table-column prop="address" label="地址">
+            </el-table-column>
+        </el-table>
+    </div>
 </template>
 
 <script>
     export default {
     	name: 'system-role',
     	data() {
-    		return {};
+    		return {
+    			tableData3: [
+    				{
+    					date: '2016-05-03',
+    					name: '王小虎',
+    					address: '上海市普陀区金沙江路 1518 弄'
+    				},
+    				{
+    					date: '2016-05-02',
+    					name: '王小虎',
+    					address: '上海市普陀区金沙江路 1518 弄'
+    				},
+    				{
+    					date: '2016-05-04',
+    					name: '王小虎',
+    					address: '上海市普陀区金沙江路 1518 弄'
+    				},
+    				{
+    					date: '2016-05-01',
+    					name: '王小虎',
+    					address: '上海市普陀区金沙江路 1518 弄'
+    				},
+    				{
+    					date: '2016-05-08',
+    					name: '王小虎',
+    					address: '上海市普陀区金沙江路 1518 弄'
+    				},
+    				{
+    					date: '2016-05-06',
+    					name: '王小虎',
+    					address: '上海市普陀区金沙江路 1518 弄'
+    				},
+    				{
+    					date: '2016-05-07',
+    					name: '王小虎',
+    					address: '上海市普陀区金沙江路 1518 弄'
+    				}
+    			]
+    		};
     	},
     	methods: {}
     };
 </script>
 
 <style lang="less">
-    // @import './assets/css/main.less';
-    // .el-menu-vertical-demo:not(.el-menu--collapse) {
-    // 	width: 200px;
-    // 	min-height: 400px;
-    // }
+
 </style>

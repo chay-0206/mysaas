@@ -10,6 +10,13 @@
 	margin: 0;
 	padding: 0;
 }
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 body {
 	font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
 		'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
@@ -24,6 +31,10 @@ body {
 	font-weight: 400;
 	width: 100%;
 	-webkit-font-smoothing: antialiased;
+}
+.my-title {
+	font-size: 18px;
+	font-weight: 700;
 }
 /**************** 工具类样式 *****************/
 /* 水平flex布局 */

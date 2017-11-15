@@ -120,17 +120,21 @@
     	width: 100%;
     	height: 100%;
     	background: #e8eaec;
+    	display: flex;
+    	flex-direction: column;
     }
     header {
     	height: 40px;
     	width: 100%;
     	background: #fff;
+    	flex-shrink: 0;
     }
     main {
     	width: 100%;
     	height: 100%;
     	margin-top: 10px;
     	background: #fff;
+    	padding: 20px;
     }
 </style>
 
