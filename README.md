@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mysaas
 
 > A Vue.js project
@@ -28,3 +29,6 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# mysaas
+>>>>>>> 049a27013e238cf701ce5d5bf404f4c3e0706752
