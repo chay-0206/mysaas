@@ -47,7 +47,7 @@
                     <el-menu-item index="4-1">账号管理</el-menu-item>
                     <el-menu-item index="/system/role">角色管理</el-menu-item>
                     <el-menu-item index="4-3">系统配置</el-menu-item>
-                    <el-menu-item index="4-4">操作日志</el-menu-item>
+                    <el-menu-item index="/system/log">操作日志</el-menu-item>
                 </el-submenu>
             </el-menu>
         </aside>

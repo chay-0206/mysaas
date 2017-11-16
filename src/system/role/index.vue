@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="my-title" style="margin-bottom:20px;">角色列表</div>
+        <div class="my-title">角色列表</div>
         <table>
             <thead>
                 <tr>
@@ -17,7 +17,7 @@
                         <el-button icon="el-icon-share" size="mini" v-if="item.isDefault===0">查看</el-button>
                         <div v-else>
                             <el-button icon="el-icon-edit" size="mini">编辑</el-button>
-                            <el-button icon="el-icon-warning" size="mini" @click="deleteData(item.roleId)">删除</el-button>
+                            <el-button icon="el-icon-warning" size="mini" @click.stop.prevent="deleteData(item.roleId)">删除</el-button>
                         </div>
                     </td>
                 </tr>
