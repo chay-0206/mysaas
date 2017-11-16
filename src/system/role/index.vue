@@ -36,7 +36,38 @@
     	},
     	methods: {
     		deleteData: function(id) {
-    			this.data.remove(id, 'roleId');
+    			this.$confirm('确认删除改角色?', '删除角色', {
+    				confirmButtonText: '确定',
+    				cancelButtonText: '取消',
+    				type: 'warning'
+    			})
+    				.then(() => {
+    					this.$axios({
+    						type: 'get',
+    						url: '/success',
+    						data: { roleId: id }
+    					}).then(res => {
+    						res = res.data;
+    						if (res.status.code != 0) {
+    							this.$message({
+    								type: 'error',
+    								message: res.status.description
+    							});
+    							return;
+    						}
+    						this.$message({
+    							type: 'success',
+    							message: '删除成功!'
+    						});
+    						this.data.remove(id, 'roleId');
+    					});
+    				})
+    				.catch(() => {
+    					this.$message({
+    						type: 'info',
+    						message: '已取消删除'
+    					});
+    				});
     		}
     	},
     	created() {

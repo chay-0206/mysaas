@@ -9,7 +9,7 @@
                     <i class="el-icon-tickets"></i>
                 </el-radio-button>
             </el-radio-group>
-            <el-menu class="el-menu-vertical-demo" background-color="#454e53" text-color="#fff" active-text-color="#1ab9a6" :router="true" :default-active="activeIndex" :collapse="isCollapse" style="height:100%;">
+            <el-menu class="el-menu-vertical-demo" unique-opened="" background-color="#454e53" text-color="#fff" active-text-color="#1ab9a6" :router="true" :default-active="activeIndex" :collapse="isCollapse" style="height:100%;">
                 <div class="hfq-logo">
                 </div>
                 <el-submenu index="1">
