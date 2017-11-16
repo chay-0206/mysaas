@@ -43,6 +43,10 @@
                 </tr>
             </tbody>
         </table>
+        <div class="page-container">
+            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="page.page" :page-size.sync="page.size" layout="prev, pager, next, jumper" :total.sync="page.total">
+            </el-pagination>
+        </div>
     </div>
 </template>
 
@@ -51,20 +55,33 @@
     	name: 'system-role',
     	data() {
     		return {
-    			data: []
+    			data: [],
+    			page: {
+    				page: 1,
+    				size: 10,
+    				total: 1
+    			}
     		};
     	},
-    	methods: {},
+    	methods: {
+    		handleSizeChange: function() {},
+    		handleCurrentChange: function() {}
+    	},
     	created() {
     		this.$axios
     			.get(`/v3/system/operationlog/reqoperationloglist/`)
     			.then(res => {
     				this.data = res.data.result.list;
+    				this.page.total = res.data.result.total;
     			});
     	}
     };
 </script>
 
 <style lang="less">
-
+    .page-container {
+    	display: flex;
+    	justify-content: flex-end;
+    	margin-top: 20px;
+    }
 </style>

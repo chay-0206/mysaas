@@ -136,6 +136,7 @@
     	background: #fff;
     	padding: 20px;
     	overflow: auto;
+    	position: relative;
     }
 </style>
 
