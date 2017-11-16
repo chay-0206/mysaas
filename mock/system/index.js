@@ -1,7 +1,5 @@
 import Mock from 'mockjs';
 
-let isProduction = process.env.NODE_ENV === 'production';
-
 Mock.mock('/v3/privilege/role/reqrolelist/', {
 	status: { code: '0', description: 'success' },
 	result: [

@@ -17,7 +17,7 @@
                         <el-button icon="el-icon-share" size="mini" v-if="item.isDefault===0">查看</el-button>
                         <div v-else>
                             <el-button icon="el-icon-edit" size="mini">编辑</el-button>
-                            <el-button icon="el-icon-warning" size="mini">删除</el-button>
+                            <el-button icon="el-icon-warning" size="mini" @click="deleteData(item.roleId)">删除</el-button>
                         </div>
                     </td>
                 </tr>
@@ -34,7 +34,11 @@
     			data: []
     		};
     	},
-    	methods: {},
+    	methods: {
+    		deleteData: function(id) {
+    			this.data.remove(id, 'roleId');
+    		}
+    	},
     	created() {
     		this.$axios.get(`/v3/privilege/role/reqrolelist/`).then(res => {
     			this.data = res.data.result;

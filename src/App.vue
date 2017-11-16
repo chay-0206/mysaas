@@ -61,7 +61,6 @@
 </template>
 
 <script>
-    import mock from 'assets/js/mock.js';
     import 'element-ui/lib/theme-chalk/index.css';
     import 'element-ui/lib/index.js';
     export default {

@@ -2,6 +2,8 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import axios from 'axios';
+import util from 'util';
+import mock from 'mock';
 
 import ElementUI, { Message } from 'element-ui';
 

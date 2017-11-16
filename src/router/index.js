@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import system from '@/system/index';
-import system_role from '@/system/role';
+import system from 'src/system/index';
+import system_role from 'src/system/role';
 
-import page404 from '@/components/404';
+import page404 from 'src/components/404';
 
 Vue.use(Router);
 
